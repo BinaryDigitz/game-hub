@@ -1,14 +1,16 @@
 import { GameGrid, NavBar } from "./components/exportComp";
-import ThemeProvider from "./providers/ThemeProvider";
+import ThemeProvider, { ThemeContext } from "./providers/ThemeProvider";
 import "./App.css";
+import { useContext } from "react";
 function App() {
+  const themeContext = useContext(ThemeContext)
   return (
     <ThemeProvider>
       <div id="app">
         <header id="header">
           <NavBar />
         </header>
-        <main id="main">
+        <main id="main" className={themeContext?.colorMode.color}>
            <GameGrid/>
           </main>
         <aside id="aside" className="hidden lg:block">
