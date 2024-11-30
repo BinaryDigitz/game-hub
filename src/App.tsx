@@ -1,4 +1,4 @@
-import { NavBar } from "./components/exportComp";
+import { GameGrid, NavBar } from "./components/exportComp";
 import ThemeProvider from "./providers/ThemeProvider";
 import "./App.css";
 function App() {
@@ -8,7 +8,9 @@ function App() {
         <header id="header">
           <NavBar />
         </header>
-        <main id="main">main</main>
+        <main id="main">
+           <GameGrid/>
+          </main>
         <aside id="aside" className="hidden lg:block">
           aside
         </aside>

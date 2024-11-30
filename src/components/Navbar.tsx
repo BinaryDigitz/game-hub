@@ -8,7 +8,6 @@ import {ColorModeSwitch} from "./exportComp";
 function Navbar() {
   const themeContext = useContext(ThemeContext);
 
-
   return (
     <nav className={`h-14 flex items-center justify-between ${themeContext?.colorMode.color}`}>
       <div className="logo p-1">
