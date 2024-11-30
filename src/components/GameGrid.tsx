@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import useGames from "../hooks/useGames";
 import { ThemeContext } from "../providers/ThemeProvider";
+import GameCard from "./GameCard";
 
 function GameGrid() {
   const themeContext = useContext(ThemeContext);
@@ -9,12 +10,11 @@ function GameGrid() {
   return (
     <div className={themeContext?.colorMode.color}>
       {error && <p className="text-danger">{error}</p>}
-
-      <ul>
-        {games.map((game) => (
-          <li key={game.id}>{game.name}</li>
+      <div className="grid place-items-center grid-cols-1 2xl:grid-cols-5 md:grid-cols-2 lg:grid-cols-3 ">
+      {games.map((game) => (
+          <GameCard key={game.id} game={game}/>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
