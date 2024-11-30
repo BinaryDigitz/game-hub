@@ -2,6 +2,7 @@ import { useContext } from "react";
 import logo from "../assets/logo.webp";
 import { Button } from "../utilities/exportUtilities";
 import { ThemeContext } from "../providers/ThemeProvider";
+import {ColorModeSwitch} from "./exportComp";
 
 
 function Navbar() {
@@ -14,9 +15,7 @@ function Navbar() {
         <img src={logo} alt="logo" className="size-14" />
       </div>
       <div>Search</div>
-      <div className="pr-2">
-        <Button className="btn btn-primary" onClick={themeContext?.toggleTheme}>Change</Button>
-      </div>
+      <ColorModeSwitch/>
     </nav>
   );
 }
