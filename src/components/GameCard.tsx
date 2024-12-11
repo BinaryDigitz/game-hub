@@ -1,5 +1,6 @@
 import type { Game } from "../types/GameTypes";
 import { CriticScore, PlatformIconList } from "./exportComp";
+import getCroppedImageUrl from "../services/image-url";
 interface Props {
   game: Game;
 }
@@ -7,7 +8,7 @@ interface Props {
 function GameCard({ game }: Props) {
   return (
     <div className=" p-4 md:w-[300px] md:h-[300px] rounded-lg m-3 shadow-md overflow-hidden">
-      <img src={game.background_image} alt="" />
+      <img src={getCroppedImageUrl(game.background_image)} alt="" />
       <div className="p-2 bg-slate-950">
         <h2 className="text-xl">{game.name}</h2>
         <div className="flex  justify-between items-center">

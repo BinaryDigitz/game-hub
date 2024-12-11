@@ -34,7 +34,7 @@ function PlatformIconList({ platforms }: Props) {
   return (
     <div className="flex gap-2 flex-wrap  md:w-[200px]">
       {platforms.map((platform) => (
-        <p className="text-xs">{platform.name}</p>
+        <p className="text-xs" key={platform.id}>{platform.name}</p>
       ))}
     </div>
   );
