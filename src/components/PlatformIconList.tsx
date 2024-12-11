@@ -32,7 +32,7 @@ function PlatformIconList({ platforms }: Props) {
   console.log(iconMap);
   
   return (
-    <div className="flex gap-2 justify-end">
+    <div className="flex gap-2 flex-wrap  md:w-[200px]">
       {platforms.map((platform) => (
         <p className="text-xs">{platform.name}</p>
       ))}
