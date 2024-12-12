@@ -1,4 +1,4 @@
-import { GameGrid, NavBar } from "./components/exportComp";
+import { GameGrid, GenreList, NavBar } from "./components/exportComp";
 import ThemeProvider, { ThemeContext } from "./providers/ThemeProvider";
 import "./App.css";
 import { useContext } from "react";
@@ -14,7 +14,7 @@ function App() {
            <GameGrid/>
           </main>
         <aside id="aside" className="hidden lg:block">
-          aside
+          <GenreList />
         </aside>
       </div>
     </ThemeProvider>
