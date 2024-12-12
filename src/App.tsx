@@ -10,10 +10,10 @@ function App() {
         <header id="header">
           <NavBar />
         </header>
-        <main id="main" className={themeContext?.colorMode.color}>
+        <main id="main" className={`${themeContext?.colorMode.color} trans`}>
            <GameGrid/>
           </main>
-        <aside id="aside" className="hidden lg:block">
+        <aside id="aside" className={`hidden lg:block  ${themeContext?.colorMode.sideColor}`}>
           <GenreList />
         </aside>
       </div>

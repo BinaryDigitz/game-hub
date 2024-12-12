@@ -3,7 +3,7 @@ interface Props {
 }
 function GameCardContainer({ children }: Props) {
   return (
-    <div className=" bg-[#00000e] p-4 md:w-[300px] md:h-[300px] rounded-lg m-3 shadow-md overflow-hidden">
+    <div className="md:w-[300px] md:h-[330px] rounded-lg m-3 shadow-lg overflow-hidden">
       {children}
     </div>
   );

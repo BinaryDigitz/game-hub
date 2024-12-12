@@ -1,7 +1,7 @@
 
 #app{
   display: grid;
-  grid-template-columns: minmax(200px , auto) 1fr;
+  grid-template-columns: minmax(150px , auto) 1fr;
   grid-template-rows:auto 1fr;
 }
 #header{
