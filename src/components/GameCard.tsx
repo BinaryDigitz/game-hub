@@ -1,5 +1,5 @@
 import type { Game } from "../types/GameTypes";
-import { CriticScore, PlatformIconList } from "./exportComp";
+import { CriticScore, GameCardContainer, PlatformIconList } from "./exportComp";
 import getCroppedImageUrl from "../services/image-url";
 interface Props {
   game: Game;
@@ -7,18 +7,22 @@ interface Props {
 
 function GameCard({ game }: Props) {
   return (
-    <div className=" p-4 md:w-[300px] md:h-[300px] rounded-lg m-3 shadow-md overflow-hidden">
-      <img src={getCroppedImageUrl(game.background_image)} alt="" />
-      <div className="p-2 bg-slate-950">
-        <h2 className="text-xl">{game.name}</h2>
-        <div className="flex  justify-between items-center">
-          <PlatformIconList
-            platforms={game.parent_platforms.map((p) => p.platform)}
-          />
+   <GameCardContainer>
+      <div className="w-full h-full">
+      <img
+        src={getCroppedImageUrl(game.background_image)}
+        alt={game.name}
+        className="min-h-100 min-w-200 bg-white"
+      />
+      <div className="bg-[#00001c]">
+        <h2 className="p-2 ">{game.name}</h2>
+        <h4 className="flex gap-4 justitfy-between items-center p-2">
+          <PlatformIconList platforms={game.parent_platforms.map( p => p.platform)} />
           <CriticScore score={game.metacritic} />
-        </div>
+        </h4>
       </div>
-    </div>
+      </div>
+    </GameCardContainer>
   );
 }
 

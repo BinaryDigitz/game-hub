@@ -1,4 +1,4 @@
-
+import { GameCardContainer } from "./exportComp";
 
 function GameCardSkeleton() {
   return (
