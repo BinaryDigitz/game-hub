@@ -3,7 +3,10 @@ import { useContext } from "react";
 import { ThemeContext } from "../providers/ThemeProvider";
 function GenreList() {
   const themeContext = useContext(ThemeContext);
-  const { data } = useGenres();
+  const { data, isLoading, error } = useGenres();
+
+  if(error) return null;
+  if (isLoading) return <p className={` h-screen text-center text-lg ${themeContext?.colorMode.sideColor}`}>Loading....</p>;
   return (
     <ul>
       {data.map((genre) => (
