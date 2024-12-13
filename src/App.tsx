@@ -13,6 +13,7 @@ import { Platform } from "./types/GameTypes";
 
 function App() {
   const themeContext = useContext(ThemeContext);
+ const [sortOrder, setSortOrder ] = useState<string | null>(null);
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
   const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
     null
@@ -29,9 +30,10 @@ function App() {
               selectedPlatform={selectedPlatform}
               onSelectPlatform={(platform) => setSelectedPlatform(platform)}
             />
-            <SortSelector />
+            <SortSelector sortOrder={sortOrder} onSelectSortOrder={(sortOrder) => setSortOrder(sortOrder)} />
         </div>
           <GameGrid
+          sortOrder={sortOrder}
             selectedPlatform={selectedPlatform}
             selectedGenre={selectedGenre}
           />
