@@ -12,17 +12,20 @@ import { Genre } from "./hooks/useGenres";
 import { Platform } from "./types/GameTypes";
 
 function App() {
-  const themeContext = useContext(ThemeContext);
+const themeContext = useContext(ThemeContext);
  const [sortOrder, setSortOrder ] = useState<string | null>(null);
+ const [searchText, setSearchText ] = useState<string | null>(null);
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
   const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
     null
   );
+  
+  
   return (
     <ThemeProvider>
       <div id="app" className={`${themeContext?.colorMode.color}  `}>
         <header id="header">
-          <NavBar />
+          <NavBar onSearch={(text) => setSearchText(text)}/>
         </header>
         <main id="main" className={`${themeContext?.colorMode.color} trans`}>
         <div className={`${themeContext?.colorMode.sideColor} trans grid grid-cols-2 `}>
@@ -36,6 +39,7 @@ function App() {
           sortOrder={sortOrder}
             selectedPlatform={selectedPlatform}
             selectedGenre={selectedGenre}
+            searchText={searchText}
           />
         </main>
         <aside

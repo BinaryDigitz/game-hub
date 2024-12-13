@@ -10,11 +10,12 @@ interface Props{
   selectedGenre:Genre | null;
   selectedPlatform:Platform | null;
   sortOrder?: string | null;
+  searchText?: string | null;
 }
-function GameGrid({selectedGenre, selectedPlatform, sortOrder} : Props) {
+function GameGrid({selectedGenre, selectedPlatform, sortOrder, searchText} : Props) {
   
   const themeContext = useContext(ThemeContext);
-  const { data, error, isLoading } = useGames(selectedGenre, selectedPlatform, sortOrder);
+  const { data, error, isLoading } = useGames(selectedGenre, selectedPlatform, sortOrder, searchText);
   const skeletons = [1,2,3,4,5,6,7,8,9,10]
   return (
     <div className={themeContext?.colorMode.color}>

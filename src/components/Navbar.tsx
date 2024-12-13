@@ -3,8 +3,11 @@ import logo from "../assets/logo.webp";
 import { ThemeContext } from "../providers/ThemeProvider";
 import {ColorModeSwitch, SearchInputs} from "./exportComp";
 
+interface Props{
+  onSearch: (search: string) => void
+}
 
-function Navbar() {
+function Navbar({onSearch}: Props) {
   const themeContext = useContext(ThemeContext);
 
   return (
@@ -13,7 +16,7 @@ function Navbar() {
         <img src={logo} alt="logo" className="size-14" />
       </div>
       <div>
-        <SearchInputs/>
+        <SearchInputs onSearch={onSearch}/>
       </div>
       <ColorModeSwitch/>
     </nav>
