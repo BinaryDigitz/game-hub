@@ -16,7 +16,6 @@ interface Props {
 }
 
 function PlatformIconList({ platforms }: Props) {
-console.log(platforms);
 
   // const iconMap: {[key: string]: IconType} ={
   //   pc: FaWindows,
