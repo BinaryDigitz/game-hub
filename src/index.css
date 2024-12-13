@@ -104,7 +104,11 @@ input, select{
  background-color: transparent;
   
 }
+::placeholder{
+  color: var(--forground-color-tone);
+  font-size: 0.9rem;
+}
 input:focus{
-  background-color: rgb(201, 241, 212);
+  
   outline: none;
 }
