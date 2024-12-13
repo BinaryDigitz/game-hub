@@ -1,5 +1,6 @@
 import {
   GameGrid,
+  GameHeading,
   GenreList,
   NavBar,
   PlatformSelector,
@@ -23,11 +24,12 @@ const themeContext = useContext(ThemeContext);
   
   return (
     <ThemeProvider>
-      <div id="app" className={`${themeContext?.colorMode.color}  `}>
+      <div id="app" className={`${themeContext?.colorMode.color}  trans`}>
         <header id="header">
           <NavBar onSearch={(text) => setSearchText(text)}/>
         </header>
         <main id="main" className={`${themeContext?.colorMode.color} trans`}>
+          <GameHeading genre={selectedGenre} platform={selectedPlatform}/>
         <div className={`${themeContext?.colorMode.sideColor} trans grid grid-cols-2 `}>
           <PlatformSelector
               selectedPlatform={selectedPlatform}
