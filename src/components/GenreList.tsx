@@ -8,7 +8,7 @@ interface Props{
 function GenreList({onSelectGenre}:Props) {
   const themeContext = useContext(ThemeContext);
   const { data, isLoading, error } = useGenres();
-
+ 
   if(error) return null;
   if (isLoading) return <p className={` h-screen text-center text-lg ${themeContext?.colorMode.sideColor}`}>Loading....</p>;
   return (

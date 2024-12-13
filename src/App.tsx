@@ -1,4 +1,4 @@
-import { GameGrid, GenreList, NavBar } from "./components/exportComp";
+import { GameGrid, GenreList, NavBar, PlatformSelector } from "./components/exportComp";
 import ThemeProvider, { ThemeContext } from "./providers/ThemeProvider";
 import "./App.css";
 import { useContext, useState } from "react";
@@ -13,6 +13,7 @@ function App() {
           <NavBar />
         </header>
         <main id="main" className={`${themeContext?.colorMode.color} trans`}>
+          <PlatformSelector/>
            <GameGrid selectedGenre={selectedGenre}/>
           </main>
         <aside id="aside" className={`hidden lg:block  ${themeContext?.colorMode.sideColor}`}>
