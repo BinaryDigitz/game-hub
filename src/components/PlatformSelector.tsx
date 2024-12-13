@@ -1,8 +1,13 @@
 import { useContext, useState } from "react";
 import { ThemeContext } from "../providers/ThemeProvider";
 import usePlatforms from "../hooks/usePlatforms";
+import { Platform } from "../types/GameTypes";
+interface Props{
+  onSelectPlatform: (platform: Platform) => void
+  selectedPlatform: Platform | null
+}
+function PlatformSelector({onSelectPlatform, selectedPlatform}: Props) {
 
-function PlatformSelector() {
   const { data, error } = usePlatforms();
   const [showList, setShowList] = useState(false);
   const themeContext = useContext(ThemeContext);
@@ -18,7 +23,7 @@ function PlatformSelector() {
         onClick={handleShowlist}
         className={`${themeContext?.colorMode.sideColor} px-6 py-2 rounded-md`}
       >
-        Platforms
+        {selectedPlatform ? selectedPlatform.name : "Select Platform"}
       </button>
       <ul
         onClick={handleShowlist}
@@ -28,7 +33,7 @@ function PlatformSelector() {
          `}
       >
         {data.map((platform) => (
-          <li key={platform.id} className={`${listClass}`}>
+          <li onClick={() => onSelectPlatform(platform)} key={platform.id} className={`${listClass}`}>
             {platform.name}
           </li>
         ))}

@@ -4,14 +4,16 @@ import { ThemeContext } from "../providers/ThemeProvider";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import { Genre } from "../hooks/useGenres";
+import { Platform } from "../types/GameTypes";
 
 interface Props{
-  selectedGenre:Genre | null
+  selectedGenre:Genre | nullp;
+  selectedPlatform:Platform | null;
 }
-function GameGrid({selectedGenre} : Props) {
+function GameGrid({selectedGenre, selectedPlatform} : Props) {
   
   const themeContext = useContext(ThemeContext);
-  const { data, error, isLoading } = useGames(selectedGenre);
+  const { data, error, isLoading } = useGames(selectedGenre, selectedPlatform);
   const skeletons = [1,2,3,4,5,6,7,8,9,10]
   return (
     <div className={themeContext?.colorMode.color}>
