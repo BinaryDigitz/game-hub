@@ -21,7 +21,7 @@ function PlatformSelector({onSelectPlatform, selectedPlatform}: Props) {
     <div className={`${themeContext?.colorMode.color} p-2 relative trans`}>
       <button
         onClick={handleShowlist}
-        className={`${themeContext?.colorMode.sideColor} px-6 py-2 rounded-md`}
+        className={`${themeContext?.colorMode.sideColor} px-6 py-2 rounded-md shadow-md`}
       >
         {selectedPlatform ? selectedPlatform.name : "Select Platform"}
       </button>
