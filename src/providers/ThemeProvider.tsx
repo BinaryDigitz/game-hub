@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
+
 
 type Theme = "dark" | "light" | null | string;
 
