@@ -1,4 +1,4 @@
-import { GameCardContainer } from "./exportComp";
+
 
 function GameCardSkeleton() {
   return (
@@ -7,8 +7,8 @@ function GameCardSkeleton() {
       <div className="p-2">
         <h2 className="h-4 bg-blue-800"></h2>
         <h4 className="flex gap-4 justitfy-between items-center bg-blue-950">
-            <h3 className="min-h-4"></h3>
-            <h3 className="min-h-4"></h3>
+            <span className="min-h-4"></span>
+            <span className="min-h-4"></span>
         </h4>
       </div>
     </div>
